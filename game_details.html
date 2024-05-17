@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spelinformation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="game_details.html?game=r6">Rainbow Six Siege</a></li>
+          <li><a href="game_details.html?game=rocket_league">Rocket League</a></li>
+          <li><a href="game_details.html?game=fortnite">Fortnite</a></li>
+          <li><a href="game_details.html?game=minecraft">Minecraft</a></li>
+        </ul>
+      </nav>
+      
+    <div class="container">
+        <h1>Spelinformation</h1>
+        <div id="game-details">
+          <h2 class="game-title" id="game-title"></h2>
+          <img src="" alt="Bild på spelet" id="game-image" class="game-img">
+          <p class="game-description" id="game-description"></p>
+        </div>
+      </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var game = params.get('game');
+
+    var gameTitle = document.getElementById("game-title");
+    var gameImage = document.getElementById("game-image");
+    var gameDescription = document.getElementById("game-description");
+
+    if (game === "r6") {
+      gameTitle.innerText = "Rainbow Six Siege";
+      gameImage.src = "R6.jpg";
+      gameDescription.innerText = "Rainbow Six Siege är en intensiv flerspelartaktisk shooter utvecklad av Ubisoft. Spelare engagerar sig i strategiskt teambaserat agerande, använder olika operatörer med unika förmågor för att överträffa motståndare i dynamiska miljöer.";
+    } else if (game === "rocket_league") {
+      gameTitle.innerText = "Rocket League";
+      gameImage.src = "RL.jpg";
+      gameDescription.innerText = "Rocket League är en unik blandning av fotboll och fordonshavoc, utvecklad och publicerad av Psyonix. Spelare kontrollerar raketen-drivna bilar och tävlar i matcher där målet är att göra mål genom att slå en gigantisk boll i motståndarens mål. Med sin snabba spel och fysikbaserade mekanik levererar Rocket League en uppfriskande sportupplevelse som ingen annan.";
+    } else if (game === "fortnite") {
+      gameTitle.innerText = "Fortnite";
+      gameImage.src = "fortnite.jpg";
+      gameDescription.innerText = "Fortnite är ett online-spel utvecklat av Epic Games. Spelet innehåller två spellägen: Fortnite Save the World och Fortnite Battle Royale. Battle Royale-läget är en kamp där hundra spelare slåss för att vara den sista överlevande.";
+    } else if (game === "minecraft") {
+      gameTitle.innerText = "Minecraft";
+      gameImage.src = "minecraft.jpg";
+      gameDescription.innerText = "Minecraft är ett sandlådespel som utvecklats och publicerats av Mojang Studios. Spelet erbjuder spelare en öppen värld där de kan utforska, bygga och överleva. Minecraft är känt för sin kreativa frihet och möjligheten för spelare att bygga nästan vad som helst.";
+    }
+  </script>
+</body>
+</html>
